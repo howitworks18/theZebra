@@ -1,0 +1,9 @@
+{
+  "@robertoachar/generator-react": {
+    "promptValues": {
+      "name": "Matt Howitt",
+      "email": "matt.a.howitt@gmail.com",
+      "username": "howitworks18"
+    }
+  }
+}
