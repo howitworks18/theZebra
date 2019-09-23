@@ -1,6 +1,3 @@
-# The Zebra Coding Challenge
-
-This README.md file contains information 
 
 ## Install and run
 
