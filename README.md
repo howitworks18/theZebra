@@ -1,40 +1,29 @@
-# awesome-app
+# The Zebra Coding Challenge
 
-[![License][license-badge]][license-url]
+This README.md file contains information 
 
-> An awesome app.
+## Install and run
 
-# Development
+Clone this repo into a local directory and change into that directory.
 
-- Clone the repo
-
+Install dependencies:
 ```bash
-$ git clone https://github.com/howitworks18/awesome-app.git
+npm install
+```
+Run locally: 
+```bash
+npm start
 ```
 
-- Install dependencies
+## Code Style
+Moch data comes into ```comparisonScreen.js``` and mapped over using the ```<InfoCard/>``` component.
 
-```bash
-$ npm install
-```
+Each component has its own scss file, classNames are camel-case.    
 
-- Run scripts
 
-| Action                      | Usage           |
-| --------------------------- | --------------- |
-| Start development mode      | `npm start`     |
-| Build for production        | `npm run build` |
-| Lint code                   | `npm run lint`  |
-| Run tests                   | `npm run test`  |
-| Eject from create-react-app | `npm run eject` |
+## Framework
+Built with React.js, scaffold with Yeoman using  @robertoachar/react generator. 
 
-# Author
 
-[Matt Howitt](https://twitter.com/howitworks18)
-
-# License
-
-[MIT](https://github.com/howitworks18/awesome-app/blob/master/LICENSE)
-
-[license-badge]: https://img.shields.io/github/license/howitworks18/awesome-app.svg
-[license-url]: https://opensource.org/licenses/MIT
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
