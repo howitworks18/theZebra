@@ -19,7 +19,7 @@ Each component has its own scss file, classNames are camel-case.
 
 Built with React.js, scaffold with Yeoman using  @robertoachar/react generator. 
 
-There is one test you can run, ```npm run test``` the test will pass/fail based on if properties are being passed to the main component. 
+There is one test you can run, ```npm run test```. the test will pass/fail based on if properties are being passed to the main component. 
 
 
 ## License
