@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import '../../index.scss';
 import {  
   IconFeaturesLocalAgent,
@@ -20,9 +19,9 @@ import {
   IconFeaturesRateLock,
   IconFeaturesRentersBundle,
   IconFeaturesSR22,
-  IconStarWhite } from './svgs'
+  IconStarWhite } from './assets/svgs'
 
-export class Icons extends Component {
+export class FeatureIconHandler extends Component {
 
   icons() {
     let {features} = this.props;
@@ -99,9 +98,9 @@ export class Icons extends Component {
   }
   render() {
     return (
-      <React.Fragment>
-          {this.icons()}
-      </React.Fragment>
+      <>
+        {this.icons()}
+      </>
     );
   }
 }

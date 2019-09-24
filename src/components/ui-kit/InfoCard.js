@@ -1,30 +1,21 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import './InfoCard.scss';
-import {IconStarGold, IconBoltWhite} from './svgs'
+import {IconStarGold, IconBoltWhite} from './assets/svgs'
 import logo from './assets/logo-carrier-sm-default.png';
-import {Icons} from './FeatureIconHelper';
+import {FeatureIconHandler} from './FeatureIconHandler';
 import Drawer from './Drawer';
 
 export class InfoCard extends Component {
-  constructor(porps) {
-    super(porps);
-    this.state = {
-      toggled: false
-    };
-  }
 
-  handleClick=()=>()=> {
-    this.setState({toggled: !this.state.toggled});
-  }
-
+  // Renders logo, name, tagline, rating and feature icon
   header() {
     let {features, starRating, name, tagline} = this.props;
     let featuresAr = features ? features : [];
     let stars = [];
 
     for (let i = 0; i < starRating; i++) {
-      stars.push(<IconStarGold/>);
+      stars.push(<IconStarGold key={i}/>);
     }
 
     return (
@@ -36,7 +27,7 @@ export class InfoCard extends Component {
           <div className="statWrapper">
             <div>{stars}</div>
             <div className="featuresIcon">
-              <Icons features={featuresAr}/>
+              <FeatureIconHandler features={featuresAr}/>
             </div>
           </div>
         </div>
@@ -44,11 +35,16 @@ export class InfoCard extends Component {
     );
   }
 
-  handleButtonAction=()=>()=>{
+  handleButtonAction=()=>{
     const url = `https://www.${this.props.link}`;
     window.open(url, '_blank');
   }
 
+  add=(x,y)=>{
+    return x + y;
+  }
+
+  // Handles right section, price and button
   priceHandler() {
     const {rate, type, linkText} = this.props;
     const rateFormatted = rate ? rate.toFixed(2) : rate;
@@ -68,10 +64,10 @@ export class InfoCard extends Component {
             <div className="price">{rateFormatted}</div> 
             <div className="monthTag"> / mo</div>
         </div>}
-        <a className={`buyButton ${buttonClass}`} onClick={this.handleButtonAction()}>
+        <button className={`buyButton ${buttonClass}`} onClick={this.handleButtonAction}>
           <IconBoltWhite/>
           <div className="buttonText">{buttonText}</div>
-        </a>
+        </button>
       </div>
     );
   }
@@ -93,7 +89,7 @@ InfoCard.propTypes = {
   name: PropTypes.string,
   starRating: PropTypes.number,
   rate: PropTypes.number,
-  features: PropTypes.string,
+  features: PropTypes.array,
   tagline: PropTypes.string,
   link: PropTypes.string
 };

@@ -1,17 +1,16 @@
-import React, { useState, useRef } from "react";
-import {IconChevronDown} from './svgs'
+import React, { useState, useRef } from 'react';
+import {IconChevronDown} from './assets/svgs';
+import './Drawer.scss';
 
-import "./Accordion.scss";
-
-function Drawer(props) {
+const Drawer=(props)=>{
   const [setActive, setActiveState] = useState("");
-  const [setHeight, setHeightState] = useState("0px");
+  const [height, setHeightState] = useState("0px");
   const [setRotate, setRotateState] = useState("drawerIcon");
 
   const content = useRef(null);
 
 
-  function toggleDrawer() {
+  const toggleDrawer=()=>{
     setActiveState(setActive === "" ? "active" : "");
     setHeightState(
       setActive === "active" ? "0px" : `${content.current.scrollHeight}px`
@@ -25,7 +24,7 @@ function Drawer(props) {
     <div className="drawerSection">
       <div
         ref={content}
-        style={{ maxHeight: `${setHeight}` }}
+        style={{ maxHeight: `${height}` }}
         className="drawerContent"
       >
         <div className="drawerText">{props.content}</div>

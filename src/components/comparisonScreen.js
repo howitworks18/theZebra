@@ -5,7 +5,7 @@ export class ComparisonScreen extends Component {
   render() {
     const insuranceData = require('../carrier_cards.json').carrier_cards;
     return (
-      <div>
+      <>
         {insuranceData.map((data, i) => (
           <InfoCard 
             key={i} 
@@ -21,7 +21,7 @@ export class ComparisonScreen extends Component {
             details={data.detail_body}/>
           )
         )}
-      </div>
+      </>
     );
   }
 }
